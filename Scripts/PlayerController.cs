@@ -8,9 +8,17 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public Text countText;
     public Text winText;
+    //public Vector3 userAcceleration;    // for mobile movement - not working
 
     private Rigidbody rb;
     private int count;
+
+    void Main()
+    {
+        // Preventing mobile devices going in to sleep mode 
+        //(actual problem if only accelerometer input is used)
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    }
 
     private void Start()
     {
@@ -21,12 +29,42 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        // 13/09/2017 Separate Contrller Input
+        if (SystemInfo.deviceType == DeviceType.Desktop)                                // Keyboard Input
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        rb.AddForce (movement * speed);
+
+            rb.AddForce(movement * speed);
+        }
+        /*
+        //     else if (SystemInfo.deviceType == DeviceType.Handheld)                          // Mobile Input
+        else
+        {
+            //float mobileMoveH = Input.gyro.userAcceleration.x;
+            // float mobileMoveY = Input.gyro.userAcceleration.y;
+
+            // Vector3 movement = new Vector3(mobileMoveH, 0.0f, mobileMoveY);
+
+            // Vector3 movement = new Vector3(Input.acceleration.x, 0.0f, Input.acceleration.y);
+
+            //  rb.AddForce(movement * speed * Time.deltaTime);
+            transform.Translate(Input.acceleration.x, 0.0f, Input.acceleration.z);
+            //transform.Translate(Input.acceleration.x, Input.acceleration.y, 0.0f);
+        }
+        */
+        else
+        {
+            // Player movement in mobile devices
+            // Building of force vector 
+            Vector3 movement = new Vector3(Input.acceleration.x, 0.0f, Input.acceleration.y);
+            // Adding force to rigidbody
+            //rigidbody.AddForce(movement * speed * Time.deltaTime);
+            rb.AddForce(movement * speed);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
