@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public Text countText;
     public Text winText;
-    //public Vector3 userAcceleration;    // for mobile movement - not working
+
+    private AudioSource audioPickup;
 
     private Rigidbody rb;
     private int count;
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour {
         count = 0;
         SetCountText();
         winText.text = "";
+
+        audioPickup = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate() {
@@ -58,15 +61,12 @@ public class PlayerController : MonoBehaviour {
         */
         else
         {
-            // Player movement in mobile devices
-            // Building of force vector 
+            // Player movement in mobile devices Building of force vector 
             Vector3 movement = new Vector3(Input.acceleration.x, 0.0f, Input.acceleration.y);
-            // Adding force to rigidbody
-            //rigidbody.AddForce(movement * speed * Time.deltaTime);
             rb.AddForce(movement * speed);
         }
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
 
@@ -75,7 +75,10 @@ public class PlayerController : MonoBehaviour {
             other.gameObject.SetActive(false);
             count += 1;
             SetCountText();
-        }        
+
+            // Audio
+            audioPickup.Play();                             // Play the pickup sound effect
+        }
     }
 
     void SetCountText()
@@ -87,6 +90,3 @@ public class PlayerController : MonoBehaviour {
         }
     }
 }
-//  Destroy(other.gameObject);
-//if (other.gameObject.CompareTag("Player"))
-//    gameObject.SetActive(false);
