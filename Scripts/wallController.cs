@@ -1,10 +1,20 @@
-﻿using System.Collections;
+﻿/*
+ * Joe O'Regan
+ * K00203642
+ * 
+ * WallController.cs
+ * 
+ * Detect collisions with the player object
+ * Play a sound when hit
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class wallController : MonoBehaviour {
 
-    private AudioSource audioBumpWall;
+    private AudioSource audioBumpWall;                                  // Sound effect added for colliding with the wall
 
     // Use this for initialization
     void Start ()
