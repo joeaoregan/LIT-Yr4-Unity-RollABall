@@ -5,7 +5,13 @@
 ### What is this repository for? ###
 
 * This is the Roll-A-Ball Tutorial to learn the principles of working with Unity
-* Version 1
+* Version 2
+* Added a countdown timer
+* Added a time power up, that randomly appears in a corner when the clock reaches a certain time period
+* Added lose conditions to the game
+* Different sound effects for player hitting walls, collecting pick ups, and collecting power ups
+* Added two music tracks
+* Added a script to randomly select a music track, and play the next track when the current one is complete
 
 ### How do I get set up? ###
 
