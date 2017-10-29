@@ -12,7 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wallController : MonoBehaviour {
+public class WallController : MonoBehaviour {
 
     private AudioSource audioBumpWall;                                  // Sound effect added for colliding with the wall
 

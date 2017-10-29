@@ -7,7 +7,7 @@
  * Add randomly spawning powerups and restart the game after winning/losing
  */
  
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
