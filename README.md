@@ -1,8 +1,16 @@
-# ROLL-A-BALL TUTORIAL README #
+# BSc Computing (Games Design and Development)
+## Joe O'Regan (K00203642)
+### Platform Digital Game Development
+
+---
+
+##  ROLL-A-BALL TUTORIAL README #
 
 [Unity - Roll-a-ball tutorial link](https://unity3d.com/learn/tutorials/projects/roll-ball-tutorial)
 
-### What is this repository for? ###
+---
+
+## Roll-A-Ball
 
 * This is the Roll-A-Ball Tutorial to learn the principles of working with Unity
 * Version 2
@@ -15,10 +23,9 @@
 * Version 3
   * Added singleton so music track continues to play after the current scene has reset
 
-### How do I get set up? ###
+---
 
-* I have included all assets for the project
+## Screenshot
 
-### Who do I talk to? ###
-
-* Joe O'Regan k00203642@student.lit.ie
+![Roll-A-Ball HTML5](https://raw.githubusercontent.com/joeaoregan/LIT-Yr4-Unity-RollABall/master/Screenshots/RollABall.jpg "Roll-A-Ball HTML5")
+###### Roll-A-Ball HTML5
