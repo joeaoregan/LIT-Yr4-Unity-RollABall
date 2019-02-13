@@ -1,6 +1,8 @@
-# BSc Computing (Games Design and Development)
+# Platform Digital Game Development
 ## Joe O'Regan (K00203642)
-### Platform Digital Game Development
+### Year 4 (2017/18), Semester 8
+#### BSc Computing (Games Design and Development)
+##### Limerick Institute of Technology
 
 ---
 
