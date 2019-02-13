@@ -1,4 +1,4 @@
-# Platform Digital Game Development
+# Programming Digital Game Engines
 ## Joe O'Regan (K00203642)
 ### Year 4 (2017/18), Semester 8
 #### BSc Computing (Games Design and Development)
